@@ -29,6 +29,10 @@ def twosComplement(onescomplement):
                 twoscomplement = "0" + twoscomplement
             else:
                 twoscomplement = i + twoscomplement
+
+            if (carry == 1):
+                print("Overflow.")
+            
     print(f"two's compliment is: {twoscomplement}")
             
 def fractionalDecimalToBinary(decimal):
