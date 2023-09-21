@@ -1,5 +1,13 @@
+def bitLenght(binary, bit_lenght):
+    if len(binary) >= bit_lenght:
+        return binary
+    else:
+        addedceros = bit_lenght - len(binary)
+        for i in range(addedceros):
+            binary = '0' + binary
+        return binary
+
 def onesComplement(binary):
-    #i need to match the bit lenght!!!
     onescomplement = ""
     for bit in binary:
         if bit == "0":
@@ -10,8 +18,22 @@ def onesComplement(binary):
     return onescomplement
 
 def twosComplement(onescomplement):
-    #definir longitud de ancho de bits.
-    print("in process")
+    carry = 1
+    twoscomplement = ""
+    onescomplement = list(onescomplement.strip(""))
+    for i in reversed(onescomplement):
+            if (i == "0" and carry == 1):
+                twoscomplement = "1" + twoscomplement
+                carry = 0
+            elif (i == "1" and carry == 1):
+                twoscomplement = "0" + twoscomplement
+            else:
+                twoscomplement = i + twoscomplement
+    str(twoscomplement)
+    print(f"two's compliment is: {twoscomplement}")
+            
+def fractionalDecimalToBinary(decimal):
+    print("working on it.")
 
 def decimalToBinary(decimal):
         binary = ""
@@ -20,19 +42,20 @@ def decimalToBinary(decimal):
             print(f"You did "+str(decimal)+" // 2"+ ", its remainder is: "+ str(remainder)+".")
             binary = str(remainder) + binary
             decimal = decimal // 2
+        bit_lenght = int(input("how many bits? "))
+        binary = bitLenght(binary, bit_lenght)
         print(f"the number in binary is: "+binary+".")
-
         return binary
     
 def convertNumber():
     try:
         decimal = int(input("Enter a decimal: "))
         if (decimal > 0):
-            int(decimal)
             decimalToBinary(decimal)
         elif (decimal < 0):
             decimal = abs(decimal)
             binary = decimalToBinary(decimal)
-            onesComplement(binary)
+            onescomplement = onesComplement(binary)
+            twosComplement(onescomplement)
     except ValueError:
         print(f"u dumb.")
