@@ -20,7 +20,7 @@ def onesComplement(binary):
 def twosComplement(onescomplement):
     carry = 1
     twoscomplement = ""
-    onescomplement = list(onescomplement.strip(""))
+    onescomplement = list(onescomplement.strip())
     for i in reversed(onescomplement):
             if (i == "0" and carry == 1):
                 twoscomplement = "1" + twoscomplement
@@ -29,7 +29,6 @@ def twosComplement(onescomplement):
                 twoscomplement = "0" + twoscomplement
             else:
                 twoscomplement = i + twoscomplement
-    str(twoscomplement)
     print(f"two's compliment is: {twoscomplement}")
             
 def fractionalDecimalToBinary(decimal):
