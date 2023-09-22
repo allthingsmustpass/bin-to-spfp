@@ -1,3 +1,20 @@
+def findExponent(binary):
+    exponent = 0
+    str(binary)
+    for bit in reversed(binary):
+         exponent = exponent + 1
+         if (bit == "1"):
+            print("we find it!")
+            break
+    print("the exponent is: "+str(exponent)+".")
+    return exponent
+         
+def adjustExponent(exponent):
+    
+    adjusted_exponent = exponent + 2**7 - 1
+    print("the adjusted exponent is: "+str(adjusted_exponent)+".")
+    return adjusted_exponent
+
 def bitLenght(binary, bit_lenght):
     if len(binary) >= bit_lenght:
         return binary
@@ -31,9 +48,10 @@ def twosComplement(onescomplement):
                 twoscomplement = i + twoscomplement
 
             if (carry == 1):
-                print("Overflow.")
+                print("Overflow!")
             
     print(f"two's compliment is: {twoscomplement}")
+    return twoscomplement
             
 def fractionalDecimalToBinary(decimal):
     print("working on it.")
@@ -54,11 +72,16 @@ def convertNumber():
     try:
         decimal = int(input("Enter a decimal: "))
         if (decimal > 0):
-            decimalToBinary(decimal)
+            binary = decimalToBinary(decimal)
+            exponent = findExponent(binary)
+            adjustExponent(exponent)
         elif (decimal < 0):
             decimal = abs(decimal)
             binary = decimalToBinary(decimal)
             onescomplement = onesComplement(binary)
-            twosComplement(onescomplement)
+            binary = twosComplement(onescomplement)
+            str(binary)
+            exponent = findExponent(binary)
+            adjustExponent(exponent)
     except ValueError:
         print(f"u dumb.")
