@@ -95,9 +95,10 @@ def convertNumber():
             buildFloatingPoint(sign, adjusted_exponent, adjusted_mantissa)
         elif (decimal < 0):
             sign = "1"
+            decimal = removeSign(decimal)
             binary = decimalToBinary(decimal)
             exponent = findExponent(binary)
-            mantissa = moveComa(exponent)
+            mantissa = moveComa(binary, exponent)
             decimal = adjustExponent(exponent)
             adjusted_exponent = decimalToBinary(decimal)
             adjusted_mantissa = normalizeMantissa(mantissa) #fix!
@@ -121,3 +122,11 @@ def normalizeMantissa(mantissa):
 def buildFloatingPoint(sign, adjusted_exponent, adjusted_mantissa):
     print("the sign is: "+sign+" the exponent is: "+adjusted_exponent+" the mantissa is: "+adjusted_mantissa)
     return sign + adjusted_exponent + adjusted_mantissa
+
+def removeSign(decimal):
+    decimal = str(decimal)
+    if decimal[0] == "-":
+        decimal = decimal[1:]
+    print(f"the decimal without sign is: {decimal}")
+    decimal = int(decimal)
+    return decimal
