@@ -3,6 +3,7 @@
 this repository contains a Python script for converting decimal numbers to IEEE 754 single-precision floating-point representation. it also supports negative numbers 
 
 - [ ] currently working on handle fractional parts of decimal numbers.
+- [ ] documentation.
 
 ## Installation
 
@@ -11,7 +12,7 @@ this repository contains a Python script for converting decimal numbers to IEEE 
 ```bash
 git clone https://github.com/allthingsmustpass/bin-to-spfp.git
 ```
-2. Run the script by executing the following command:
+2. run the script by executing the following command:
 
 ```bash
 python floating_point_converter.py
