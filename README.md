@@ -9,7 +9,7 @@ this repository contains a Python script for converting decimal numbers to IEEE 
 1. clone this repository to your local machine using the following command:
 
 ```bash
-git clone https://github.com/tu_usuario/tu_repositorio.git
+git clone https://github.com/allthingsmustpass/bin-to-spfp.git
 ```
 2. Run the script by executing the following command:
 
