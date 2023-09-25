@@ -15,7 +15,7 @@ git clone https://github.com/allthingsmustpass/bin-to-spfp.git
 2. run the script by executing the following command:
 
 ```bash
-python floating_point_converter.py
+python main.py
 ```
 
 ## Usage

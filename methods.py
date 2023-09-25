@@ -124,6 +124,12 @@ def buildFloatingPoint(sign, adjusted_exponent, adjusted_mantissa):
     return sign + adjusted_exponent + adjusted_mantissa
 
 def removeSign(decimal):
+    """removes the sign from a decimal number if it is negative.
+
+    @param: decimal (int or str): the decimal number that have a sign.
+
+    @return (int): the absolute value of the decimal number without its sign.
+    """
     decimal = str(decimal)
     if decimal[0] == "-":
         decimal = decimal[1:]
